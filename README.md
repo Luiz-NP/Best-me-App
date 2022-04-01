@@ -1,7 +1,7 @@
 # Best me App
 
-* Find your best version!
+* Encontre sua melhor versão!
 
-* Use the App at the end of each day to reflect on your journey.
+* Use o App no final de cada dia para refletir sobre sua jornada.
 
-## This repository was created from a rocketseat example to practice using npm
+## Este repositório foi criado a partir de um exemplo da rocketseat para praticar o uso do nodeJS
