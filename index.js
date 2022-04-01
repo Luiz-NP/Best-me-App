@@ -7,7 +7,40 @@ const questions = [
 
 //Função que irá perguntar
 const ask = (index = 0) => {
-  process.stdout.write('\n' + questions[index] + '\n\n')
+  process.stdout.write('\n\n' + questions[index] + ' > ')
 }
 
 ask()
+
+//Armazena as respostas
+const answers = []
+
+//Entrada de dados
+process.stdin.on('data', data => {
+  answers.push(data.toString().trim())
+
+  if (answers.length < questions.length) {
+    ask(answers.length)
+  } else {
+    process.exit()
+  }
+})
+
+process.on('exit', () => {
+  console.log(`
+    Legal Luiz
+
+    O que você aprendeu hoje foi:
+    ${answers[0]}
+
+    O que te aborreceu e você poderia melhorar foi:
+    ${answers[1]}
+
+    O que te deixou feliz hoje:
+    ${answers[2]}
+
+    Você ajudou ${answers[3]} pessoa(as) hoje!!
+
+    Volte amanhã para novas reflexões
+  `)
+})
